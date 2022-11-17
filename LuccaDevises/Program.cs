@@ -15,7 +15,7 @@ namespace LuccaDevises
         {
             CurrencyPath path = new CurrencyPath();
 
-            if (File.Exists(args[0]))
+            if (File.Exists(args[0]) && Path.GetExtension(args[0]) == ".txt")
             {
                 // Lecture du fichier
                 List<string> lines = File.ReadAllLines(args[0]).ToList();
@@ -70,7 +70,7 @@ namespace LuccaDevises
             }
             else
             {
-                Console.WriteLine("Le fichier est introuvable");
+                Console.WriteLine("Le chemin renseigné est incorrect");
             }
             Console.ReadLine();
         }
